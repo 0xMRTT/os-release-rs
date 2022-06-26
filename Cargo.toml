@@ -2,7 +2,9 @@
 name = "os-release-rs"
 version = "0.1.0"
 edition = "2021"
-
+description = "Rust wrapper for /etc/os-release"
+license = "GPL-3.0"
+repository = "https://github.com/0xMRTT/os-release-rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
