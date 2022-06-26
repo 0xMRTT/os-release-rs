@@ -28,3 +28,7 @@ This crate is under the GNU General Public License v3.0.
 
 See [LICENSE.md](LICENSE.md) for more information.
 
+## Contributing
+
+Open an issue or pull request to add or improve a feature.
+
