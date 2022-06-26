@@ -31,33 +31,36 @@ fn parse_line(line: &str, skip: usize) -> &str {
 
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct OsRelease {
-    /// The name of the operating system.
-    /// This is the name of the operating system as it appears to the user.
-    /// For example, on ArchLinux, this is "Arch Linux".
-    pub name:               String,
-    /// The pretty name of the operating system.
-    pub pretty_name:        String,
-    /// The name of the distribution in the form of a codename.
-    /// For example, on ArchLinux, this is "archlinux".
-    pub id:                 String,
-    /// If the distro is a rolling release, it will be "rolling".
-    pub build_id:           String,
-    /// Related distribution id.
-    /// If the distro is derived from another distro, it will be the id of the parent distro.
-    /// For example, on Manjaro, this is "arch".
-    pub id_like:            String,
-    /// Url of bug reporting system.
-    /// This is the URL of the bug reporting system for the distribution.
-    /// For example, on ArchLinux, this is "https://bugs.archlinux.org".
-    pub bug_report_url:     String,
     /// ANSI color code for the distribution.
     /// This is a six numbers.
     /// For example, on ArchLinux, this is "38;2;23;147;209.
     pub ansi_color:         String,
+    /// If the distro is a rolling release, it will be "rolling".
+    pub build_id:           String,
+    /// Url of bug reporting system.
+    /// This is the URL of the bug reporting system for the distribution.
+    /// For example, on ArchLinux, this is "https://bugs.archlinux.org".
+    pub bug_report_url:     String,
+    pub documentation_url:  String,
     /// Homepage of the distribution.
     /// This is the homepage of the distribution.
     /// For example, on ArchLinux, this is "https://www.archlinux.org/".
+    pub extra:              BTreeMap<String, String>
     pub home_url:           String,
+    /// The name of the distribution in the form of a codename.
+    /// For example, on ArchLinux, this is "archlinux".
+    pub id:                 String,
+    /// Related distribution id.
+    /// If the distro is derived from another distro, it will be the id of the parent distro.
+    /// For example, on Manjaro, this is "arch".
+    pub id_like:            String,
+    /// The name of the operating system.
+    /// This is the name of the operating system as it appears to the user.
+    /// For example, on ArchLinux, this is "Arch Linux".
+    pub logo:               String,
+    pub name:               String,
+    /// The pretty name of the operating system.
+    pub pretty_name:        String,
     /// Privacy policy url.
     /// This is the URL of the privacy policy of the distribution.
     /// For example, on ArchLinux, this is "https://www.archlinux.org/legal/privacy-policy/".
@@ -65,13 +68,10 @@ pub struct OsRelease {
     /// Support url
     /// This is the URL of the support page of the distribution.
     /// For example, on ArchLinux, this is "https://www.archlinux.org/support/".
-    pub support_url:        String,
-    pub documentation_url:  String,
-    pub logo:               String,
+    pub version:            String,
     pub version_codename:   String,
     pub version_id:         String,
-    pub version:            String,
-    pub extra:              BTreeMap<String, String>
+    pub support_url:        String,
 }
 
 impl OsRelease {
@@ -96,20 +96,20 @@ impl FromIterator<String> for OsRelease {
         for line in lines {
             let line = line.trim();
             map_keys!(line, {
-                "NAME=" => os_release.name,
-                "VERSION=" => os_release.version,
+                "ANSI_COLOR=" => os_release.ansi_color,
+                "BUILD_ID=" => os_release.build_id,
+                "BUG_REPORT_URL=" => os_release.bug_report_url,
+                "DOCUMENTATION_URL=" => os_release.documentation_url,
+                "HOME_URL=" => os_release.home_url,
                 "ID=" => os_release.id,
                 "ID_LIKE=" => os_release.id_like,
-                "BUILD_ID=" => os_release.build_id,
-                "DOCUMENTATION_URL=" => os_release.documentation_url,
-                "ANSI_COLOR=" => os_release.ansi_color,
                 "LOGO=" => os_release.logo,
+                "NAME=" => os_release.name,
                 "PRETTY_NAME=" => os_release.pretty_name,
-                "VERSION_ID=" => os_release.version_id,
-                "HOME_URL=" => os_release.home_url,
-                "SUPPORT_URL=" => os_release.support_url,
-                "BUG_REPORT_URL=" => os_release.bug_report_url,
                 "PRIVACY_POLICY_URL=" => os_release.privacy_policy_url,
+                "SUPPORT_URL=" => os_release.support_url,
+                "VERSION=" => os_release.version,
+                "VERSION_ID=" => os_release.version_id,
                 "VERSION_CODENAME=" => os_release.version_codename
             });
 
