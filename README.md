@@ -26,7 +26,7 @@ fn main() {
 
 This crate is under the GNU General Public License v3.0.
 
-See [LICENSE.md](LICENSE.md) for more information.
+See [LICENSE](LICENSE) for more information.
 
 ## Contributing
 
