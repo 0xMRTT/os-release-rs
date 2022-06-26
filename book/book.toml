@@ -3,4 +3,4 @@ authors = ["0xMRTT"]
 language = "en"
 multilingual = false
 src = "src"
-title = "os-release"
+title = "os-release wrapper for Rust"
