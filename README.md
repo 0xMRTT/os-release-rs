@@ -32,3 +32,7 @@ See [LICENSE.md](LICENSE.md) for more information.
 
 Open an issue or pull request to add or improve a feature.
 
+## Used in
+
+* `[neors](https://github.com/0xMRTT/neors)`
+* Your project ? Open an issue with 
