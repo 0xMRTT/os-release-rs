@@ -4,7 +4,8 @@ use std::io::{self, BufRead, BufReader};
 use std::iter::FromIterator;
 use std::path::Path;
 
-
+/// Map keys to values.
+/// For each key in the file, add a key to the map with the value of the key.
 macro_rules! map_keys {
     ($item:expr, { $($pat:expr => $field:expr),+ }) => {{
         $(
@@ -20,6 +21,9 @@ fn is_enclosed_with(line: &str, pattern: char) -> bool {
     line.starts_with(pattern) && line.ends_with(pattern)
 }
 
+/// Parse a line of the form `<key> = <value>`
+/// The key is expected to be a single word or something like MY_KEY_NAME.
+/// The line is returned as a `&str`.
 fn parse_line(line: &str, skip: usize) -> &str {
     let line = line[skip..].trim();
     if is_enclosed_with(line, '"') || is_enclosed_with(line, '\'') {
