@@ -100,6 +100,10 @@ impl FromIterator<String> for OsRelease {
                 "VERSION=" => os_release.version,
                 "ID=" => os_release.id,
                 "ID_LIKE=" => os_release.id_like,
+                "BUILD_ID=" => os_release.build_id,
+                "DOCUMENTATION_URL=" => os_release.documentation_url,
+                "ANSI_COLOR=" => os_release.ansi_color,
+                "LOGO=" => os_release.logo,
                 "PRETTY_NAME=" => os_release.pretty_name,
                 "VERSION_ID=" => os_release.version_id,
                 "HOME_URL=" => os_release.home_url,
@@ -139,7 +143,8 @@ HOME_URL="https://archlinux.org/"
 DOCUMENTATION_URL="https://wiki.archlinux.org/"
 SUPPORT_URL="https://archlinux.org/"
 BUG_REPORT_URL="https://bugs.archlinux.org/"
-LOGO=archlinux-logo"#;
+LOGO=archlinux-logo
+EXTRA_KEY=thing"#;
 
     #[test]
     fn os_release() {
