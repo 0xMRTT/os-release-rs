@@ -1,0 +1,34 @@
+name: Add project
+description: Add project to use list
+title: "[Add]: "
+labels: ["add project"]
+assignees:
+  - 0xMRTT
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to add your project!
+  - type: input
+    id: url
+    attributes:
+      label: URL of your project
+      description: How can we find your project?
+      placeholder: ex. https://github.com/0xMRTT/os-release-rs
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name of your project
+      description: What is the name of your project?
+      placeholder: ex. os-release-rs
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Quickly describe your project.
+    validations:
+      required: true
