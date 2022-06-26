@@ -41,11 +41,17 @@ pub struct OsRelease {
     /// This is the URL of the bug reporting system for the distribution.
     /// For example, on ArchLinux, this is "https://bugs.archlinux.org".
     pub bug_report_url:     String,
+    /// Url of the documentation for the distribution.
+    /// This is the URL of the documentation for the distribution.
+    /// For example, on ArchLinux, this is "https://wiki.archlinux.org".
+    /// The ArchWiki is the biggest documentation of every open source project.
+    /// This is not the same as the URL of the distribution's website.
     pub documentation_url:  String,
+    /// Extra keys will be stored in this map.
+    pub extra:              BTreeMap<String, String>,
     /// Homepage of the distribution.
     /// This is the homepage of the distribution.
     /// For example, on ArchLinux, this is "https://www.archlinux.org/".
-    pub extra:              BTreeMap<String, String>
     pub home_url:           String,
     /// The name of the distribution in the form of a codename.
     /// For example, on ArchLinux, this is "archlinux".
@@ -58,6 +64,9 @@ pub struct OsRelease {
     /// This is the name of the operating system as it appears to the user.
     /// For example, on ArchLinux, this is "Arch Linux".
     pub logo:               String,
+    /// Logo of the distribution.
+    /// This is the logo of the distribution.
+    /// For example, on ArchLinux, this is "archlinux-logo".
     pub name:               String,
     /// The pretty name of the operating system.
     pub pretty_name:        String,
@@ -65,12 +74,21 @@ pub struct OsRelease {
     /// This is the URL of the privacy policy of the distribution.
     /// For example, on ArchLinux, this is "https://www.archlinux.org/legal/privacy-policy/".
     pub privacy_policy_url: String,
-    /// Support url
-    /// This is the URL of the support page of the distribution.
-    /// For example, on ArchLinux, this is "https://www.archlinux.org/support/".
+    /// The version of the distribution.
+    /// This is the version of the distribution.
+    /// For example, on ArchLinux, this is "" because ArchLinux is rolling release so ArchLinux doesn't have version.
     pub version:            String,
+    /// The version codename of the distribution.
+    /// This is the version codename of the distribution.
+    /// For example, on ArchLinux, this is "" because ArchLinux is rolling release so ArchLinux doesn't have version.
     pub version_codename:   String,
+    /// The version id of the distribution.
+    /// This is the version id of the distribution.
+    /// For example, on ArchLinux, this is "" because ArchLinux is rolling release so ArchLinux doesn't have version.
     pub version_id:         String,
+    /// The support url of the distribution.
+    /// This is the support url of the distribution.
+    /// For example, on ArchLinux, this is "https://bbs.archlinux.org/"
     pub support_url:        String,
 }
 
