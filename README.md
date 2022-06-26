@@ -21,3 +21,10 @@ fn main() {
     println!("I use {} btw!", os_release.name);
 }
 ```
+
+## License
+
+This crate is under the GNU General Public License v3.0.
+
+See [LICENSE.md](LICENSE.md) for more information.
+
