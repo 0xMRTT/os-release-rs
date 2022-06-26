@@ -112,6 +112,10 @@ impl OsRelease {
 }
 
 impl FromIterator<String> for OsRelease {
+    /// Parse the lines of the `/etc/os-release` file.
+    /// The lines are expected to be in the form of `<key> = <value>`.
+    /// If keys aren't in the list of standard keys, there will be in `extra` field.
+    /// See the `OsRelease` struct for the list of standard keys.
     fn from_iter<I: IntoIterator<Item = String>>(lines: I) -> Self {
         let mut os_release = Self::default();
 
@@ -146,6 +150,8 @@ impl FromIterator<String> for OsRelease {
     }
 }
 
+/// Open the file at the given path.
+/// If the file does not exist, return an error.
 fn open<P: AsRef<Path>>(path: P) -> io::Result<File> {
     File::open(&path).map_err(|why| io::Error::new(
         io::ErrorKind::Other,
