@@ -25,8 +25,8 @@ jobs:
         cd book
         mdbook build
         git worktree add gh-pages gh-pages
-        git config user.name "Deploy from CI"
-        git config user.email ""
+        git config user.name "0xMRTT"
+        git config user.email "0xMRTT@tuta.io"
         cd gh-pages
         # Delete the ref to avoid keeping history.
         git update-ref -d refs/heads/gh-pages
