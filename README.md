@@ -34,5 +34,5 @@ Open an issue or pull request to add or improve a feature.
 
 ## Used in
 
-* [`neors`](https://github.com/0xMRTT/neors)
+* [`neors`](https://github.com/0xMRTT/neors) - Neofetch replacement in Rust
 * Your project ? Open an [issue with add project template](https://github.com/0xMRTT/os-release-rs/issues/new?assignees=0xMRTT&labels=add+project&template=add_project.yml&title=%5BAdd%5D%3A+).
